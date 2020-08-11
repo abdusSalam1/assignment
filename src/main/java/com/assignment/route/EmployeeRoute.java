@@ -11,7 +11,7 @@ public class EmployeeRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         restConfiguration().component("servlet")
-                .port(8081)
+                .port(9090)
                 .host("localhost")
                 .bindingMode(RestBindingMode.json);
 
