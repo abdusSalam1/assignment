@@ -1,0 +1,20 @@
+<rests xmlns="http://camel.apache.org/schema/spring">
+    <rest>
+        <get uri="/hello" produces="application/json">
+            <route>
+                <setBody>
+                    <constant>Hitting get api</constant>
+                </setBody>
+            </route>
+        </get>
+
+        <post uri="/add-employee" consumes="application/json" type="Employee.class">
+            <route>
+                <setBody>
+                    <constant>Hitting post api</constant>
+                </setBody>
+            </route>
+        </post>
+    </rest>
+
+</rests>

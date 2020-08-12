@@ -62,9 +62,6 @@ local.properties
 .classpath
 .settings/
 .loadpath
-sonarIssues.xml
-workspace.xml
-
 # External tool builders
 .externalToolBuilders/
 
