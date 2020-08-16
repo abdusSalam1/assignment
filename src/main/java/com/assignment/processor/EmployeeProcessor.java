@@ -13,7 +13,9 @@ public class EmployeeProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         Employee employee = exchange.getIn().getBody(Employee.class);
-        employee.setId(UUID.randomUUID());
-        exchange.getIn().setBody(employee);
+        if(employee != null){
+            employee.setId(UUID.randomUUID());
+            exchange.getIn().setBody(employee);
+        }
     }
 }

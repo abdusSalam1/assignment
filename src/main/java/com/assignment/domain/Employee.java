@@ -34,6 +34,10 @@ public class Employee {
         this.id = id;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
     public void setActive(boolean active) {
         this.active = active;
     }
