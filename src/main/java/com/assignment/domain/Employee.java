@@ -1,10 +1,13 @@
-package com.assignment.pojo;
+package com.assignment.domain;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.UUID;
 
-public class Employee implements Serializable {
+@Entity
+public class Employee {
 
+    @Id
     private UUID id;
     private String name;
     private int age;

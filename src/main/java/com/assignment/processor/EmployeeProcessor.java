@@ -1,6 +1,6 @@
 package com.assignment.processor;
 
-import com.assignment.pojo.Employee;
+import com.assignment.domain.Employee;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.springframework.context.annotation.Configuration;

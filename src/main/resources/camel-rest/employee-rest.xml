@@ -1,15 +1,15 @@
 <rests xmlns="http://camel.apache.org/schema/spring">
     <rest>
         <post uri="/add-employee" consumes="application/json" produces="application/json"
-              type="com.assignment.pojo.Employee" bindingMode="json">
+              type="com.assignment.domain.Employee" bindingMode="json">
             <route>
                 <process ref="employeeProcessor"/>
                 <marshal>
-                    <json library="Jackson" unmarshalTypeName="com.assignment.pojo.Employee" />
+                    <json library="Jackson" unmarshalTypeName="com.assignment.domain.Employee"/>
                 </marshal>
                 <inOnly uri="activemq:queue:employee_queue"/>
                 <setBody>
-                    <constant>Employee in enqueue for further processing</constant>
+                    <constant>Employee saved</constant>
                 </setBody>
             </route>
         </post>
