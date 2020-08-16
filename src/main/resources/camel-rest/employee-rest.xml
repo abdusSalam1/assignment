@@ -1,19 +1,10 @@
 <rests xmlns="http://camel.apache.org/schema/spring">
     <rest>
-        <get uri="/hello" produces="application/json">
+        <post uri="/add-employee" consumes="application/json" produces="application/json"
+              type="com.assignment.pojo.Employee" bindingMode="json">
             <route>
-                <setBody>
-                    <constant>Hitting get api</constant>
-                </setBody>
-            </route>
-        </get>
-
-        <post uri="/add-employee" consumes="application/json" type="Employee.class">
-            <route>
-                <process ref="employeeValidationProcessor"/>
-                <setBody>
-                    <constant>Hitting post api</constant>
-                </setBody>
+                <process ref="employeeProcessor"/>
+                <!--<to uri="activemq:employee_queue"></to>-->
             </route>
         </post>
     </rest>

@@ -1,7 +1,10 @@
 package com.assignment.pojo;
 
+import java.util.UUID;
+
 public class Employee {
 
+    private UUID id;
     private String name;
     private int age;
 
@@ -20,5 +23,13 @@ public class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 }
