@@ -16,6 +16,7 @@ public class EmployeeDelegateProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         Employee employee = exchange.getIn().getBody(Employee.class);
+        employee.setActive(true);
         employeeService.addEmployee(employee);
     }
 }

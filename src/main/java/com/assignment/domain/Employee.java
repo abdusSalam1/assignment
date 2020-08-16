@@ -11,6 +11,7 @@ public class Employee {
     private UUID id;
     private String name;
     private int age;
+    private boolean active;
 
     public String getName() {
 
@@ -29,11 +30,11 @@ public class Employee {
         this.age = age;
     }
 
-    public UUID getId() {
-        return id;
-    }
-
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
