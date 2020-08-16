@@ -7,7 +7,10 @@
                 <marshal>
                     <json library="Jackson" unmarshalTypeName="com.assignment.pojo.Employee" />
                 </marshal>
-                <to uri="activemq:queue:employee_queue"></to>
+                <inOnly uri="activemq:queue:employee_queue"/>
+                <setBody>
+                    <constant>Employee in enqueue for further processing</constant>
+                </setBody>
             </route>
         </post>
     </rest>

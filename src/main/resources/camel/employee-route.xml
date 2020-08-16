@@ -1,6 +1,9 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
-    <!--<route>-->
-        <!--<from uri=""/>-->
-        <!--<process ref="employeeQueueProcessor"/>-->
-    <!--</route>-->
+    <route>
+        <from uri="activemq:queue:employee_queue"/>
+        <unmarshal>
+            <json unmarshalTypeName="com.assignment.pojo.Employee" library="Jackson"/>
+        </unmarshal>
+        <process ref="employeeDelegateProcessor"/>
+    </route>
 </routes>
