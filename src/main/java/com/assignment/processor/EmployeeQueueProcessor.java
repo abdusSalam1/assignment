@@ -3,9 +3,11 @@ package com.assignment.processor;
 import com.assignment.pojo.Employee;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.UUID;
 
+@Configuration
 public class EmployeeQueueProcessor implements Processor {
 
     @Override
