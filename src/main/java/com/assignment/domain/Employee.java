@@ -13,32 +13,32 @@ public class Employee {
     private int age;
     private boolean active;
 
-    public String getName() {
-
-        return name;
+    public Employee() {
     }
 
-    public void setName(String name) {
+    public Employee(UUID id, String name, int age) {
+        this.id = id;
         this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
         this.age = age;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public UUID getId() {
         return id;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public boolean isActive() {
+        return active;
     }
 }

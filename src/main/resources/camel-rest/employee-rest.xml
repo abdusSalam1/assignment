@@ -1,8 +1,9 @@
 <rests xmlns="http://camel.apache.org/schema/spring">
     <rest>
         <post uri="/add-employee" consumes="application/json" produces="application/json"
-              type="com.assignment.domain.Employee" bindingMode="json" skipBindingOnErrorCode="true">
+              type="com.assignment.model.EmployeeModel" bindingMode="json" skipBindingOnErrorCode="true">
             <route>
+                <to uri="bean-validator://x"/>
                 <process ref="employeeProcessor"/>
                 <marshal>
                     <json library="Jackson" unmarshalTypeName="com.assignment.domain.Employee"/>
