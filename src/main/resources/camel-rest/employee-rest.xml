@@ -4,7 +4,10 @@
               type="com.assignment.pojo.Employee" bindingMode="json">
             <route>
                 <process ref="employeeProcessor"/>
-                <!--<to uri="activemq:employee_queue"></to>-->
+                <marshal>
+                    <json library="Jackson" unmarshalTypeName="com.assignment.pojo.Employee" />
+                </marshal>
+                <to uri="activemq:queue:employee_queue"></to>
             </route>
         </post>
     </rest>

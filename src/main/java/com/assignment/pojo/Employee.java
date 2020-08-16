@@ -1,8 +1,9 @@
 package com.assignment.pojo;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class Employee {
+public class Employee implements Serializable {
 
     private UUID id;
     private String name;
